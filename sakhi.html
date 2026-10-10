@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakhi – Women Safety &amp; Emergency</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ---------- Design tokens ---------- */
+:root{
+  --ink:#1d1b3a;      /* deep indigo: text, header */
+  --paper:#f6f4fb;    /* soft lavender-white background */
+  --card:#ffffff;
+  --sos:#d7263d;      /* emergency red: used only for SOS */
+  --safe:#137a6f;     /* teal: safe / confirm actions */
+  --muted:#5d5a78;
+  --line:#dcd8ec;
+  --font:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--safe);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* ---------- Header ---------- */
+header{background:var(--ink);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:1.35rem;text-decoration:none;letter-spacing:.2px}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:600;font-size:.95rem;opacity:.85}
+nav a:hover{opacity:1;text-decoration:underline}
+
+/* ---------- Hero with SOS button ---------- */
+.hero{background:var(--ink);color:#fff;padding:36px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;font-weight:800;max-width:14ch}
+.hero p{margin-top:16px;max-width:46ch;color:#d6d3ee}
+.hero .status{margin-top:22px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.09);padding:8px 14px;border-radius:999px;font-size:.92rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#4ad6c4}
+
+.sos-area{display:grid;place-items:center;text-align:center}
+.sos{
+  --p:0deg;
+  width:min(260px,68vw);aspect-ratio:1;border-radius:50%;border:0;cursor:pointer;
+  color:#fff;font-family:inherit;font-weight:800;font-size:3rem;letter-spacing:1px;
+  background:
+    radial-gradient(circle at center,var(--sos) 0 62%,transparent 63%),
+    conic-gradient(#fff var(--p),rgba(255,255,255,.18) 0);
+  box-shadow:0 0 0 12px rgba(215,38,61,.25);
+  animation:pulse 2.4s ease-in-out infinite;
+  touch-action:none;user-select:none;-webkit-user-select:none;
+}
+.sos small{display:block;font-size:.85rem;font-weight:600;letter-spacing:0;margin-top:2px;opacity:.9}
+.sos:active{transform:scale(.98)}
+.sos-hint{margin-top:18px;color:#d6d3ee;font-size:.95rem}
+@keyframes pulse{50%{box-shadow:0 0 0 22px rgba(215,38,61,.08)}}
+
+/* ---------- Alert panel (shown after SOS) ---------- */
+#alert{display:none;margin:-36px auto 0;position:relative;z-index:2}
+#alert.show{display:block}
+#alert .box{background:var(--card);border-left:8px solid var(--sos);border-radius:10px;padding:22px;box-shadow:0 10px 30px rgba(29,27,58,.18)}
+#alert h2{color:var(--sos);font-size:1.3rem}
+#alert .msg{margin:10px 0 16px;padding:12px;background:var(--paper);border-radius:8px;word-break:break-word;font-size:.95rem}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;border:2px solid var(--ink);background:var(--ink);color:#fff;font:600 1rem var(--font);cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.15)}
+.btn.red{background:var(--sos);border-color:var(--sos)}
+.btn.teal{background:var(--safe);border-color:var(--safe)}
+.btn.ghost{background:transparent;color:var(--ink)}
+
+/* ---------- Sections ---------- */
+section{padding:56px 0 8px}
+h2.title{font-size:1.7rem;font-weight:800;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:24px;max-width:60ch}
+
+/* Helplines */
+.lines{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.line{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.line b{display:block;font-size:2rem;line-height:1.1}
+.line span{color:var(--muted);font-size:.92rem}
+.line:hover{border-color:var(--ink)}
+.line.main{background:var(--ink);color:#fff}
+.line.main span{color:#d6d3ee}
+
+/* Contacts + location */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px 6px 18px 6px;padding:24px}
+.panel h3{font-size:1.15rem;margin-bottom:12px}
+label{display:block;font-weight:600;font-size:.92rem;margin:10px 0 4px}
+input{width:100%;padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;font:1rem var(--font);color:var(--ink)}
+input:focus{border-color:var(--safe)}
+.panel form .btn{margin-top:14px}
+ul.contacts{list-style:none;margin-top:16px}
+ul.contacts li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+ul.contacts button{background:none;border:0;color:var(--sos);font:600 .9rem var(--font);cursor:pointer}
+.empty{color:var(--muted);font-size:.95rem;margin-top:14px}
+#locOut{margin-top:14px;font-size:.95rem;word-break:break-word}
+
+/* Tips */
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;list-style:none}
+.tips li{background:var(--card);border-radius:12px;padding:18px;border-bottom:4px solid var(--safe)}
+.tips b{display:block;margin-bottom:4px}
+
+footer{margin-top:64px;background:var(--ink);color:#d6d3ee;padding:26px 0;font-size:.9rem}
+
+/* ---------- Responsive ---------- */
+@media (max-width:760px){
+  .hero .wrap,.two{grid-template-columns:1fr}
+  .hero{padding-bottom:56px}
+}
+@media (prefers-reduced-motion:reduce){.sos{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Sakhi</a>
+    <nav aria-label="Main">
+      <a href="#helplines">Helplines</a>
+      <a href="#contacts">Trusted contacts</a>
+      <a href="#location">Share location</a>
+      <a href="#tips">Safety tips</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Help is one press away.</h1>
+        <p>Hold the SOS button for 2 seconds. Sakhi gets your location and prepares an alert for the people you trust.</p>
+        <div class="status"><span class="dot"></span><span id="contactCount">No trusted contacts added yet</span></div>
+      </div>
+      <div class="sos-area">
+        <button class="sos" id="sosBtn" aria-label="Press and hold for 2 seconds to send an SOS alert">SOS<small>Hold for 2 seconds</small></button>
+        <p class="sos-hint" id="sosHint">Press and hold. Release to cancel.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div id="alert" role="alert" aria-live="assertive">
+      <div class="box">
+        <h2>SOS ready to send</h2>
+        <p class="msg" id="alertMsg"></p>
+        <div class="actions" id="alertActions"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="helplines">
+      <h2 class="title">Emergency helplines (India)</h2>
+      <p class="sub">Tap a number to call from your phone.</p>
+      <div class="lines">
+        <a class="line main" href="tel:112"><b>112</b><span>National emergency number</span></a>
+        <a class="line" href="tel:1091"><b>1091</b><span>Women helpline</span></a>
+        <a class="line" href="tel:181"><b>181</b><span>Women helpline (domestic abuse)</span></a>
+        <a class="line" href="tel:100"><b>100</b><span>Police</span></a>
+        <a class="line" href="tel:102"><b>102</b><span>Ambulance</span></a>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <h2 class="title">Trusted contacts and location</h2>
+      <p class="sub">Add family or friends who should receive your alert. Contacts stay in this browser only.</p>
+      <div class="two">
+        <div class="panel">
+          <h3>Add a trusted contact</h3>
+          <form id="contactForm">
+            <label for="cName">Name</label>
+            <input id="cName" required maxlength="40" autocomplete="off">
+            <label for="cPhone">Phone number</label>
+            <input id="cPhone" type="tel" required pattern="[0-9+ ]{8,15}" placeholder="+91 98765 43210">
+            <button class="btn teal" type="submit">Save contact</button>
+          </form>
+          <ul class="contacts" id="contactList"></ul>
+        </div>
+
+        <div class="panel" id="location">
+          <h3>Share my live location</h3>
+          <p class="sub" style="margin-bottom:14px">Get a map link you can send to anyone, without raising the full SOS alert.</p>
+          <button class="btn" id="locBtn" type="button">Get my location</button>
+          <p id="locOut" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <h2 class="title">Stay safe: quick tips</h2>
+      <p class="sub">Small habits that make a difference.</p>
+      <ul class="tips">
+        <li><b>Share your trip</b>Send your cab number plate and route to a trusted contact before you ride.</li>
+        <li><b>Stay in lit, busy areas</b>Choose well-lit streets, even if the route is a bit longer.</li>
+        <li><b>Keep your phone ready</b>Keep the battery above 30% and save 112 and your contacts for quick access.</li>
+        <li><b>Trust your instincts</b>If a place or person feels wrong, leave and go where other people are.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Sakhi is a student demo project. It does not replace calling 112 or your local police in an emergency.</div>
+</footer>
+
+<script>
+/* ---------- Small helpers ---------- */
+const $ = s => document.querySelector(s);
+let contacts = [];
+try { contacts = JSON.parse(localStorage.getItem('sakhi-contacts') || '[]'); } catch (e) {}
+const saveContacts = () => { try { localStorage.setItem('sakhi-contacts', JSON.stringify(contacts)); } catch (e) {} };
+
+/* ---------- Trusted contacts ---------- */
+function renderContacts() {
+  const ul = $('#contactList');
+  ul.innerHTML = '';
+  contacts.forEach((c, i) => {
+    const li = document.createElement('li');
+    const info = document.createElement('span');
+    info.textContent = c.name + ' · ' + c.phone;
+    const del = document.createElement('button');
+    del.type = 'button';
+    del.textContent = 'Remove';
+    del.onclick = () => { contacts.splice(i, 1); saveContacts(); renderContacts(); };
+    li.append(info, del);
+    ul.appendChild(li);
+  });
+  if (!contacts.length) {
+    const p = document.createElement('li');
+    p.className = 'empty';
+    p.textContent = 'No contacts yet. Add someone you trust above.';
+    ul.appendChild(p);
+  }
+  $('#contactCount').textContent = contacts.length
+    ? contacts.length + ' trusted contact' + (contacts.length > 1 ? 's' : '') + ' ready'
+    : 'No trusted contacts added yet';
+}
+$('#contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  contacts.push({ name: $('#cName').value.trim(), phone: $('#cPhone').value.trim() });
+  saveContacts(); renderContacts(); e.target.reset();
+});
+renderContacts();
+
+/* ---------- Location ---------- */
+function getLocation() {
+  return new Promise(resolve => {
+    if (!navigator.geolocation) return resolve(null);
+    navigator.geolocation.getCurrentPosition(
+      p => resolve(p.coords), () => resolve(null),
+      { enableHighAccuracy: true, timeout: 8000 });
+  });
+}
+const mapLink = c => `https://www.google.com/maps?q=${c.latitude},${c.longitude}`;
+
+$('#locBtn').addEventListener('click', async () => {
+  const out = $('#locOut');
+  out.textContent = 'Finding your location…';
+  const c = await getLocation();
+  if (!c) { out.textContent = 'Could not get your location. Allow location access in your browser and try again.'; return; }
+  const a = document.createElement('a');
+  a.href = mapLink(c); a.target = '_blank'; a.rel = 'noopener'; a.textContent = mapLink(c);
+  out.textContent = 'Your location: ';
+  out.appendChild(a);
+});
+
+/* ---------- SOS: press and hold for 2 seconds ---------- */
+const HOLD_MS = 2000;
+const sos = $('#sosBtn');
+let start = 0, raf = 0;
+
+function tick() {
+  const t = Math.min((performance.now() - start) / HOLD_MS, 1);
+  sos.style.setProperty('--p', (t * 360) + 'deg');
+  if (t >= 1) { cancelHold(); triggerSOS(); } else raf = requestAnimationFrame(tick);
+}
+function beginHold() { if (start) return; start = performance.now(); $('#sosHint').textContent = 'Keep holding…'; raf = requestAnimationFrame(tick); }
+function cancelHold() { cancelAnimationFrame(raf); start = 0; sos.style.setProperty('--p', '0deg'); $('#sosHint').textContent = 'Press and hold. Release to cancel.'; }
+
+sos.addEventListener('pointerdown', beginHold);
+['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => sos.addEventListener(ev, cancelHold));
+sos.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) { e.preventDefault(); beginHold(); } });
+sos.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') cancelHold(); });
+
+async function triggerSOS() {
+  const box = $('#alert');
+  $('#alertMsg').textContent = 'Getting your location…';
+  $('#alertActions').innerHTML = '';
+  box.classList.add('show');
+  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+  const c = await getLocation();
+  const msg = c
+    ? 'EMERGENCY: I need help. My live location: ' + mapLink(c)
+    : 'EMERGENCY: I need help. Please call me right now.';
+  $('#alertMsg').textContent = msg;
+
+  const actions = $('#alertActions');
+  const add = (label, href, cls) => {
+    const a = document.createElement('a');
+    a.className = 'btn ' + cls; a.href = href; a.textContent = label;
+    if (href.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+    actions.appendChild(a);
+  };
+  add('Call 112', 'tel:112', 'red');
+  contacts.forEach(ct => add('Text ' + ct.name, 'sms:' + ct.phone.replace(/\s/g, '') + '?body=' + encodeURIComponent(msg), 'teal'));
+  add('Share on WhatsApp', 'https://wa.me/?text=' + encodeURIComponent(msg), 'ghost');
+  if (!contacts.length) {
+    const note = document.createElement('p');
+    note.className = 'empty'; note.textContent = 'Add trusted contacts below to text them in one tap.';
+    actions.appendChild(note);
+  }
+}
+</script>
+</body>
+</html>

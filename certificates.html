@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View Bhagya's certificates and achievements." /><title>Certificates | Bhagya-CSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" /><link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page-title="Certificates">
+    <header class="site-header"><div class="container nav-wrap"><a href="index.html" class="brand"><span class="brand-mark">BC</span><span class="brand-text">Bhagya-CSE</span></a><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav aria-label="Main navigation"><ul class="nav-menu"><li><a class="nav-link" href="index.html">Home</a></li><li><a class="nav-link" href="about.html">About</a></li><li><a class="nav-link" href="skills.html">Skills</a></li><li><a class="nav-link" href="projects.html">Projects</a></li><li><a class="nav-link active" href="certificates.html">Certificates</a></li><li><a class="nav-link" href="education.html">Education</a></li><li><a class="nav-link" href="contact.html">Contact</a></li></ul></nav><a href="contact.html" class="connect-btn">Let's Connect <span>→</span></a></div></header>
+    <main><section class="section page-section certificate-section"><div class="container"><div class="section-heading reveal"><span class="eyebrow">LEARNING JOURNEY</span><h1>Certifications &amp; achievements.</h1><p>A journey of continuous learning, technical growth, and participation.</p></div>
+      <div class="cert-filter reveal" aria-label="Certificate filters"><button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button><button type="button" class="filter-btn" data-filter="technical" aria-pressed="false">Technical</button><button type="button" class="filter-btn" data-filter="achievement" aria-pressed="false">Achievements</button></div><div class="cert-grid reveal" id="certificateGrid"></div>
+    </div></section></main>
+    <link rel="stylesheet" href="C:\Users\bhagy\Documents\c1.jpg.jpeg"/>   <footer class="site-footer"><div class="container footer-inner"><div><div class="footer-name">Bhagya-CSE</div><p>Computer Science &amp; Engineering Student</p></div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div><div class="footer-socials"><a href="[YOUR GITHUB]" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="[YOUR LINKEDIN]" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> <span id="copyrightName">Bhagya-CSE</span>. All rights reserved.</span><span>Designed with HTML, CSS &amp; JavaScript.</span></div></footer>
+    <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="certificate-modal" id="certificateModal" aria-hidden="true"><div class="certificate-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle"><button class="certificate-modal-close" type="button" aria-label="Close certificate viewer">×</button><div class="certificate-modal-body"><img id="certificateModalImage" src="" alt="Certificate preview" /></div><div class="certificate-modal-footer"><div><p class="certificate-modal-label">Certificate</p><h3 id="certificateModalTitle">Certificate</h3><p id="certificateModalMeta">Certificate details</p></div><a id="certificateModalLink" class="full-size-link hidden" href="#" target="_blank" rel="noreferrer">Open Full Size</a></div></div></div>
+    <script src="script.js"></script>
+  </body>
+</html>

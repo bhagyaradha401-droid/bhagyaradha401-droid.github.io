@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title description">
+  <title id="title">Women safety and emergency alert app</title>
+  <desc id="description">A safety app concept with a phone, emergency alert button, and trusted contact connections.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2faff"/>
+      <stop offset="1" stop-color="#e0f3f8"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18384f"/>
+      <stop offset="1" stop-color="#102b40"/>
+    </linearGradient>
+    <linearGradient id="sos" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fa8290"/>
+      <stop offset="1" stop-color="#df4c66"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <circle cx="667" cy="120" r="118" fill="#fff" opacity=".55"/>
+  <circle cx="120" cy="506" r="142" fill="#cceee8" opacity=".72"/>
+
+  <path d="M258 187C207 146 176 166 139 203M542 187c51-41 82-21 119 16M258 412c-51 41-82 21-119-16M542 412c51 41 82 21 119-16" fill="none" stroke="#90cfdb" stroke-dasharray="8 9" stroke-linecap="round" stroke-width="4"/>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="55" y="151" width="178" height="76" rx="18" fill="#fff" stroke="#c5e3e9" stroke-width="2"/>
+    <circle cx="85" cy="189" r="18" fill="#e5f8fa"/>
+    <path d="M78 190c0-9 14-9 14 0v9H78Zm2-12v-5m10 5v-5" fill="none" stroke="#259eb8" stroke-linecap="round" stroke-width="3"/>
+    <text x="113" y="184" fill="#203a50" font-size="14" font-weight="700">TRUSTED</text>
+    <text x="113" y="204" fill="#203a50" font-size="14" font-weight="700">CONTACTS</text>
+
+    <rect x="567" y="151" width="178" height="76" rx="18" fill="#fff" stroke="#c5e3e9" stroke-width="2"/>
+    <circle cx="597" cy="189" r="18" fill="#e5f8fa"/>
+    <path d="M597 178c-6 0-10 5-10 11 0 8 10 19 10 19s10-11 10-19c0-6-4-11-10-11Zm0 14a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" fill="#259eb8"/>
+    <text x="625" y="184" fill="#203a50" font-size="14" font-weight="700">LIVE</text>
+    <text x="625" y="204" fill="#203a50" font-size="14" font-weight="700">LOCATION</text>
+  </g>
+
+  <rect x="285" y="50" width="230" height="500" rx="38" fill="url(#phone)" stroke="#fff" stroke-width="9"/>
+  <rect x="301" y="70" width="198" height="462" rx="26" fill="#f8fcff"/>
+  <rect x="361" y="80" width="78" height="10" rx="5" fill="#1a354a"/>
+  <text x="321" y="127" fill="#1b384e" font-family="Arial, sans-serif" font-size="23" font-weight="700">SafeSteps</text>
+  <text x="321" y="149" fill="#698194" font-family="Arial, sans-serif" font-size="12">Your safety, always within reach</text>
+  <rect x="321" y="166" width="158" height="53" rx="13" fill="#fff" stroke="#dce9ee" stroke-width="2"/>
+  <circle cx="341" cy="192" r="7" fill="#53c49b"/>
+  <text x="357" y="190" fill="#27465b" font-family="Arial, sans-serif" font-size="12" font-weight="700">Support is ready</text>
+  <text x="357" y="207" fill="#7890a0" font-family="Arial, sans-serif" font-size="10">3 trusted contacts</text>
+  <circle cx="400" cy="326" r="86" fill="#fbe2e4"/>
+  <circle cx="400" cy="326" r="70" fill="url(#sos)"/>
+  <circle cx="400" cy="326" r="55" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="3"/>
+  <text x="400" y="326" fill="#fff" font-family="Arial, sans-serif" font-size="33" font-weight="800" text-anchor="middle">SOS</text>
+  <text x="400" y="349" fill="#fff" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">HOLD TO ALERT</text>
+  <text x="400" y="438" fill="#718899" font-family="Arial, sans-serif" font-size="11" text-anchor="middle">Emergency help, just a hold away</text>
+  <rect x="321" y="458" width="158" height="42" rx="12" fill="#eaf7fa"/>
+  <text x="400" y="484" fill="#218da7" font-family="Arial, sans-serif" font-size="12" font-weight="700" text-anchor="middle">CALL 112  ·  SHARE LOCATION</text>
+</svg>

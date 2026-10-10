@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title description">
+  <title id="title">Smart gas leakage sensor</title>
+  <desc id="description">Illustration of an IoT gas sensor connected to a microcontroller with a warning indicator.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eafaff"/>
+      <stop offset="1" stop-color="#cceff8"/>
+    </linearGradient>
+    <linearGradient id="board" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#183b52"/>
+      <stop offset="1" stop-color="#102b40"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#background)"/>
+  <circle cx="660" cy="100" r="118" fill="#fff" opacity=".48"/>
+  <circle cx="130" cy="510" r="155" fill="#fff" opacity=".35"/>
+  <path d="M0 455c155-62 235 48 377-1s266-75 423 0v146H0Z" fill="#b7e7f2" opacity=".55"/>
+
+  <g fill="none" stroke="#56bed7" stroke-linecap="round" stroke-width="7" opacity=".75">
+    <path d="M246 279h85v-70h70"/>
+    <path d="M463 337h100v-67h60"/>
+    <path d="M276 365h58v60h61"/>
+  </g>
+  <g fill="#42b7d2">
+    <circle cx="246" cy="279" r="9"/><circle cx="401" cy="209" r="9"/>
+    <circle cx="623" cy="270" r="9"/><circle cx="395" cy="425" r="9"/>
+  </g>
+
+  <rect x="331" y="185" width="218" height="248" rx="28" fill="url(#board)" stroke="#fff" stroke-width="10"/>
+  <rect x="376" y="230" width="128" height="108" rx="15" fill="#204e67" stroke="#6fd3e6" stroke-width="4"/>
+  <path d="M394 252h92M394 274h92M394 296h58" fill="none" stroke="#84dcec" stroke-linecap="round" stroke-width="6" opacity=".8"/>
+  <text x="440" y="375" fill="#d7f7fd" font-family="Arial, sans-serif" font-size="19" font-weight="700" text-anchor="middle">IOT CONTROLLER</text>
+  <g stroke="#83ddec" stroke-linecap="round" stroke-width="6">
+    <path d="M354 224h-14M354 256h-14M354 288h-14M354 320h-14M354 352h-14M354 384h-14"/>
+    <path d="M540 224h14M540 256h14M540 288h14M540 320h14M540 352h14M540 384h14"/>
+  </g>
+
+  <g transform="translate(118 226)">
+    <rect width="138" height="184" rx="24" fill="#fff" stroke="#8ed6e5" stroke-width="5"/>
+    <rect x="27" y="29" width="84" height="71" rx="18" fill="#e3f7fb"/>
+    <path d="M54 72c0-19 10-29 30-29 0 20-10 30-30 30m31-10 13-15" fill="none" stroke="#299fbd" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+    <text x="69" y="135" fill="#183b52" font-family="Arial, sans-serif" font-size="16" font-weight="700" text-anchor="middle">MQ-2 SENSOR</text>
+    <text x="69" y="158" fill="#5a7688" font-family="Arial, sans-serif" font-size="13" text-anchor="middle">GAS MONITOR</text>
+  </g>
+
+  <g transform="translate(607 183)">
+    <circle cx="57" cy="57" r="55" fill="#fff" stroke="#f3c5bc" stroke-width="5"/>
+    <path d="M57 27v39" stroke="#e76d5d" stroke-linecap="round" stroke-width="11"/>
+    <circle cx="57" cy="83" r="7" fill="#e76d5d"/>
+    <path d="M20 125h74" stroke="#e76d5d" stroke-linecap="round" stroke-width="5" opacity=".55"/>
+    <text x="57" y="154" fill="#a6423b" font-family="Arial, sans-serif" font-size="15" font-weight="700" text-anchor="middle">LEAK ALERT</text>
+  </g>
+
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#183b52">
+    <text x="70" y="78">SMART SAFETY</text>
+    <text x="70" y="104" fill="#299fbd">GAS SENSOR</text>
+  </g>
+</svg>
